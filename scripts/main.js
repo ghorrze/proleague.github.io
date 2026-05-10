@@ -101,23 +101,23 @@ if (modalOverlay) {
 // =========================================================================
 // УМНЫЙ СКРОЛЛ ЗА 1 ШАГ КОЛЕСИКА
 // =========================================================================
-let isScrolling = false;
+// let isScrolling = false;
 
-window.addEventListener('wheel', function(e) {
-    if (window.scrollY < 50 && e.deltaY > 0 && !isScrolling) {
-        e.preventDefault();
-        isScrolling = true;
+// window.addEventListener('wheel', function(e) {
+//     if (window.scrollY < 50 && e.deltaY > 0 && !isScrolling) {
+//         e.preventDefault();
+//         isScrolling = true;
 
-        const target = document.getElementById('teams-section');
-        if (target) {
-            target.scrollIntoView({ behavior: 'smooth' });
-        }
+//         const target = document.getElementById('teams-section');
+//         if (target) {
+//             target.scrollIntoView({ behavior: 'smooth' });
+//         }
 
-        setTimeout(() => {
-            isScrolling = false;
-        }, 1000);
-    }
-}, { passive: false });
+//         setTimeout(() => {
+//             isScrolling = false;
+//         }, 1000);
+//     }
+// }, { passive: false });
 
 // Поддержка тач-скринов для телефонов
 let touchStartY = 0;
