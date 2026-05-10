@@ -98,27 +98,6 @@ if (modalOverlay) {
     });
 }
 
-// =========================================================================
-// УМНЫЙ СКРОЛЛ ЗА 1 ШАГ КОЛЕСИКА
-// =========================================================================
-// let isScrolling = false;
-
-// window.addEventListener('wheel', function(e) {
-//     if (window.scrollY < 50 && e.deltaY > 0 && !isScrolling) {
-//         e.preventDefault();
-//         isScrolling = true;
-
-//         const target = document.getElementById('teams-section');
-//         if (target) {
-//             target.scrollIntoView({ behavior: 'smooth' });
-//         }
-
-//         setTimeout(() => {
-//             isScrolling = false;
-//         }, 1000);
-//     }
-// }, { passive: false });
-
 // Поддержка тач-скринов для телефонов
 let touchStartY = 0;
 
@@ -144,3 +123,32 @@ window.addEventListener('touchmove', function(e) {
 
 // Запуск инициализации при загрузке документа
 document.addEventListener('DOMContentLoaded', renderTeams);
+
+// Ждем полной загрузки DOM-дерева, чтобы кнопка гарантированно существовала
+document.addEventListener('DOMContentLoaded', () => {
+    const toTeamsBtn = document.getElementById('toTeamsBtn');
+
+    if (toTeamsBtn) {
+        toTeamsBtn.addEventListener('click', function(e) {
+            e.preventDefault(); 
+            
+            if (typeof window.scrollToSection === 'function') {
+                window.scrollToSection(1);
+            } else {
+                console.warn("Функция scrollToSection не найдена в window!");
+            }
+        });
+    }
+});
+
+// =========================================================================
+// ЗАКРЫТИЕ МОДАЛЬНОГО ОКНА ПО НАЖАТИЮ НА ESCAPE
+// =========================================================================
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' || e.key === 'Esc') {
+        // Если у вас в коде уже объявлена функция закрытия, просто вызываем её:
+        if (typeof closeModal === 'function') {
+            closeModal();
+        }
+    }
+});

@@ -1,6 +1,3 @@
-// =========================================================================
-// ПОСТРАНИЧНЫЙ СМАРТ-СКРОЛЛ В ОБЕ СТОРОНЫ (БЕЗ ОБЫЧНОГО СКРОЛЛА)
-// =========================================================================
 
 const sections = [
     document.querySelector('.hero'),
@@ -10,8 +7,6 @@ const sections = [
 let currentSectionIndex = 0;
 let isScrollTransitioning = false;
 
-// Функция плавного перемещения к указанной секции
-// Функция плавного перемещения к указанной секции
 function scrollToSection(index) {
     if (index < 0 || index >= sections.length) return;
     
@@ -21,11 +16,7 @@ function scrollToSection(index) {
     isScrollTransitioning = true;
     currentSectionIndex = index;
 
-    // На сколько пикселей опустить экран ниже при переходе к командам
-    // (Поменяйте 80 на любое другое число, если нужно еще ниже или выше)
     const scrollOffset = index === 1 ? 65 : 0; 
-
-    // Вычисляем точную позицию с учетом отступа
     const targetPosition = targetSection.offsetTop + scrollOffset;
 
     window.scrollTo({
@@ -37,6 +28,9 @@ function scrollToSection(index) {
         isScrollTransitioning = false;
     }, 100); 
 }
+
+// Делаем функцию доступной для других файлов (например, для main.js)
+window.scrollToSection = scrollToSection;
 
 // 1. Обработка колесика мыши и тачпадов ноутбуков
 window.addEventListener('wheel', function(e) {

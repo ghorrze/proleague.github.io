@@ -2,14 +2,14 @@ const teamsData = [
     {
         id: 1,
         name: "Mentai Squad",
-        logo: "https://placehold.co/100x100/235ecf/ffffff?text=MS",
+        logo: "./resources/logos/mentai.jpg",
         description: "Агрессивный стиль игры и нестандартные тактические решения выделяют эту команду среди остальных претендентов.",
         players: [
             { firstName: "Семён", nickname: "Achtung", lastName: "Макин", role: "IGL" },
             { firstName: "Пётр", nickname: "petak", lastName: "Макин", role: "AWP" },
-            { firstName: "Фёдор", nickname: "kyushu", lastName: "Пленков", role: "Rifler" },
-            { firstName: "Влад", nickname: "KyLu4", lastName: "Полушин", role: "Support" },
-            { firstName: "Андрей", nickname: "recise", lastName: "Васильев", role: "Entry" },
+            { firstName: "Влад", nickname: "KyLu4", lastName: "Полушин", role: "Rifler" },
+            { firstName: "Андрей", nickname: "recise", lastName: "Васильев", role: "Support" },
+            { firstName: "Фёдор", nickname: "kyushu", lastName: "Пленков", role: "Entry" },
             { firstName: "Матвей", nickname: "monic", lastName: "Верещагин", role: "Coach" }
         ]
     },
@@ -29,15 +29,15 @@ const teamsData = [
     },
     {
         id: 3,
-        name: "Gubashleps",
-        logo: "https://placehold.co/100x100/de3535/ffffff?text=GS",
-        description: "Команда-мем, которая неожиданно для всех начала выигрывать региональные квалификации. Их главная сила — синергия и юмор.",
+        name: "Vrotality",
+        logo: "https://placehold.co/100x100/dede35/ffffff?text=V",
+        description: "Бескомпромиссные ребята, чей девиз — тотальное доминирование. Не прощают ошибок на эко-раундах оппонента.",
         players: [
-            { firstName: "Григорий", nickname: "Guba", lastName: "Козлов", role: "IGL" },
-            { firstName: "Степан", nickname: "Shlep", lastName: "Новиков", role: "AWP" },
-            { firstName: "Павел", nickname: "Pupa", lastName: "Морозов", role: "Rifler" },
-            { firstName: "Леонид", nickname: "Lupa", lastName: "Петров", role: "Support" },
-            { firstName: "Никита", nickname: "Buster", lastName: "Соловьев", role: "Entry" },
+            { firstName: "Валерий", nickname: "Vro", lastName: "Баранов", role: "IGL" },
+            { firstName: "Анатолий", nickname: "Tali", lastName: "Никитин", role: "AWP" },
+            { firstName: "Глеб", nickname: "Ty", lastName: "Шевченко", role: "Rifler" },
+            { firstName: "Даниил", nickname: "Neo", lastName: "Соболев", role: "Support" },
+            { firstName: "Матвей", nickname: "Trinity", lastName: "Румянцев", role: "Entry" },
             { firstName: "Матвей", nickname: "monic", lastName: "Верещагин", role: "Coach" }
         ]
     },
@@ -85,15 +85,15 @@ const teamsData = [
     },
     {
         id: 7,
-        name: "Vrotality",
-        logo: "https://placehold.co/100x100/dede35/ffffff?text=V",
-        description: "Бескомпромиссные ребята, чей девиз — тотальное доминирование. Не прощают ошибок на эко-раундах оппонента.",
+        name: "Gubashleps",
+        logo: "https://placehold.co/100x100/de3535/ffffff?text=GS",
+        description: "Команда-мем, которая неожиданно для всех начала выигрывать региональные квалификации. Их главная сила — синергия и юмор.",
         players: [
-            { firstName: "Валерий", nickname: "Vro", lastName: "Баранов", role: "IGL" },
-            { firstName: "Анатолий", nickname: "Tali", lastName: "Никитин", role: "AWP" },
-            { firstName: "Глеб", nickname: "Ty", lastName: "Шевченко", role: "Rifler" },
-            { firstName: "Даниил", nickname: "Neo", lastName: "Соболев", role: "Support" },
-            { firstName: "Матвей", nickname: "Trinity", lastName: "Румянцев", role: "Entry" },
+            { firstName: "Григорий", nickname: "Guba", lastName: "Козлов", role: "IGL" },
+            { firstName: "Степан", nickname: "Shlep", lastName: "Новиков", role: "AWP" },
+            { firstName: "Павел", nickname: "Pupa", lastName: "Морозов", role: "Rifler" },
+            { firstName: "Леонид", nickname: "Lupa", lastName: "Петров", role: "Support" },
+            { firstName: "Никита", nickname: "Buster", lastName: "Соловьев", role: "Entry" },
             { firstName: "Матвей", nickname: "monic", lastName: "Верещагин", role: "Coach" }
         ]
     },
