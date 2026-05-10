@@ -8,6 +8,32 @@
     --text-gray: #9a9da4;
 }
 
+/* Разрешаем прокрутку, но полностью скрываем сам скроллбар */
+html {
+    scroll-behavior: smooth;
+    /* Убираем полосы прокрутки в IE и Edge */
+    -ms-overflow-style: none;  
+    /* Убираем полосы прокрутки в Firefox */
+    scrollbar-width: none;  
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    /* overflow-y: scroll позволяет JS двигать страницу, но скроллбар не покажется */
+    overflow-y: scroll; 
+}
+
+/* Скрываем скроллбар в браузерах на движке WebKit (Chrome, Safari, Opera, Brave, новый Edge) */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    width: 0 !important;
+    height: 0 !important;
+    display: none !important;
+    background: transparent; /* На всякий случай делаем фон прозрачным */
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
