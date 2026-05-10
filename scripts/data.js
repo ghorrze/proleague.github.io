@@ -16,7 +16,7 @@ const teamsData = [
     {
         id: 2,
         name: "Virtus.Pro 2",
-        logo: "https://placehold.co/100x100/de9b35/ffffff?text=VP2",
+        logo: "./resources/logos/vp2.jpg",
         description: "Академический состав легендарной организации Virtus.Pro. Молодые таланты, готовые ворваться на тир-1 сцену CS2.",
         players: [
             { firstName: "Егор", nickname: "flamie", lastName: "Васильев", role: "IGL" },
@@ -30,7 +30,7 @@ const teamsData = [
     {
         id: 3,
         name: "Vrotality",
-        logo: "https://placehold.co/100x100/dede35/ffffff?text=V",
+        logo: "./resources/logos/vrotality.jpg",
         description: "Бескомпромиссные ребята, чей девиз — тотальное доминирование. Не прощают ошибок на эко-раундах оппонента.",
         players: [
             { firstName: "Валерий", nickname: "Vro", lastName: "Баранов", role: "IGL" },
@@ -44,7 +44,7 @@ const teamsData = [
     {
         id: 4,
         name: "Yolen Team",
-        logo: "https://placehold.co/100x100/35de79/ffffff?text=TS",
+        logo: "./resources/logos/yolen.jpg",
         description: "Сбалансированный коллектив с упором на сильную дефенс-сторону. Медленный и тягучий стиль игры заставляет соперников ошибаться.",
         players: [
             { firstName: "Андрей", nickname: "Spil", lastName: "Васильев", role: "IGL" },
@@ -58,7 +58,7 @@ const teamsData = [
     {
         id: 5,
         name: "Zubry Gaming",
-        logo: "https://placehold.co/100x100/9b35de/ffffff?text=ZG",
+        logo: "./resources/logos/zubri.jpg",
         description: "Настоящие мастодонты локальной сцены. Невероятный опыт и хладнокровие в самых сложных клатч-ситуациях.",
         players: [
             { firstName: "Владимир", nickname: "Zubr", lastName: "Богданов", role: "IGL" },
@@ -86,7 +86,7 @@ const teamsData = [
     {
         id: 7,
         name: "Gubashleps",
-        logo: "https://placehold.co/100x100/de3535/ffffff?text=GS",
+        logo: "./resources/logos/gubashelps.jpg",
         description: "Команда-мем, которая неожиданно для всех начала выигрывать региональные квалификации. Их главная сила — синергия и юмор.",
         players: [
             { firstName: "Григорий", nickname: "Guba", lastName: "Козлов", role: "IGL" },
@@ -100,7 +100,7 @@ const teamsData = [
     {
         id: 8,
         name: "Kotakbas Gaming",
-        logo: "https://placehold.co/100x100/35dede/ffffff?text=KG",
+        logo: "./resources/logos/kotakbas.jpg",
         description: "Опытный центральноазиатский ростер с филигранным пониманием карты Mirage и невероятной стрельбой из снайперских винтовок.",
         players: [
             { firstName: "Руслан", nickname: "Nomad", lastName: "Алиев", role: "IGL" },
@@ -114,7 +114,7 @@ const teamsData = [
     {
         id: 9,
         name: "WWW Team",
-        logo: "https://placehold.co/100x100/778899/ffffff?text=WWW",
+        logo: "./resources/logos/www.jpg",
         description: "Интернет-герои, перешедшие на LAN-формат. Показывают идеальную раскидку гранат и стратегический подход к каждому раунду.",
         players: [
             { firstName: "Святослав", nickname: "Dot", lastName: "Романов", role: "IGL" },
