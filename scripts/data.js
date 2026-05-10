@@ -19,12 +19,12 @@ const teamsData = [
         logo: "./resources/logos/vp2.jpg",
         description: "Академический состав легендарной организации Virtus.Pro. Молодые таланты, готовые ворваться на тир-1 сцену CS2.",
         players: [
-            { firstName: "Егор", nickname: "flamie", lastName: "Васильев", role: "IGL" },
-            { firstName: "Александр", nickname: "awper_young", lastName: "Иванов", role: "AWP" },
-            { firstName: "Дмитрий", nickname: "rifler_1", lastName: "Петров", role: "Rifler" },
-            { firstName: "Сергей", nickname: "rifler_2", lastName: "Сидоров", role: "Support" },
-            { firstName: "Иван", nickname: "support_man", lastName: "Смирнов", role: "Entry" },
-            { firstName: "Матвей", nickname: "monic", lastName: "Верещагин", role: "Coach" }
+            { firstName: "Михаил", nickname: "dOOr4jl3y", lastName: "Сорокин", role: "IGL" },
+            { firstName: "Марк", nickname: "Pers1k", lastName: "Ахмеров", role: "AWP" },
+            { firstName: "Артур", nickname: "Вафля", lastName: "Тимошин", role: "Rifler" },
+            { firstName: "Александра", nickname: "BANG!", lastName: "Ёркина", role: "Support" },
+            { firstName: "Арсений", nickname: "zigeng bogeng", lastName: "Пальгуев", role: "Entry" },
+            { firstName: "Максим", nickname: "mr snail", lastName: "Смирнов", role: "Coach" }
         ]
     },
     {
@@ -33,12 +33,12 @@ const teamsData = [
         logo: "./resources/logos/vrotality.jpg",
         description: "Бескомпромиссные ребята, чей девиз — тотальное доминирование. Не прощают ошибок на эко-раундах оппонента.",
         players: [
-            { firstName: "Валерий", nickname: "Vro", lastName: "Баранов", role: "IGL" },
-            { firstName: "Анатолий", nickname: "Tali", lastName: "Никитин", role: "AWP" },
+            { firstName: "Тимофей", nickname: "Xelsew", lastName: "Леонов", role: "IGL" },
+            { firstName: "Антон", nickname: "Oxxxyanton", lastName: "Игонин", role: "AWP" },
             { firstName: "Глеб", nickname: "Ty", lastName: "Шевченко", role: "Rifler" },
             { firstName: "Даниил", nickname: "Neo", lastName: "Соболев", role: "Support" },
             { firstName: "Матвей", nickname: "Trinity", lastName: "Румянцев", role: "Entry" },
-            { firstName: "Матвей", nickname: "monic", lastName: "Верещагин", role: "Coach" }
+            { firstName: "Филипп", nickname: "NEO", lastName: "Кубских", role: "Coach" }
         ]
     },
     {
