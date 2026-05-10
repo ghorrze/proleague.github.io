@@ -2,7 +2,7 @@ const teamsData = [
     {
         id: 1,
         name: "Mentai Squad",
-        logo: "resources/logos/mentai.jpg",
+        logo: "./resources/logos/mentai.jpg",
         description: "Агрессивный стиль игры и нестандартные тактические решения выделяют эту команду среди остальных претендентов.",
         players: [
             { firstName: "Семён", nickname: "Achtung", lastName: "Макин", role: "IGL" },
