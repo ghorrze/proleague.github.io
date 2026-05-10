@@ -70,6 +70,24 @@ body {
     letter-spacing: 1px;
 }
 
+.hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Слайд должен занимать всю высоту экрана */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out; /* Плавное перетекание */
+    z-index: 1;
+}
+
+.hero-slide.active {
+    opacity: 1; /* Только активный слайд становится видимым */
+}
+
 /* Кнопка скролла */
 .scroll-btn {
     display: inline-block;
@@ -216,7 +234,7 @@ body {
     background-color: var(--card-bg);
     border: 1px solid rgba(222, 155, 53, 0.2);
     border-radius: 12px;
-    max-width: 650px;
+    max-width: 900px; /* Окно остается просторным */
     width: 100%;
     padding: 40px;
     position: relative;
@@ -283,26 +301,105 @@ body {
 .roster-list {
     list-style: none;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    gap: 12px;
+    /* Увеличили минимальную ширину плитки до 240px, чтобы текст помещался свободно */
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); 
+    gap: 15px;
 }
 
+/* Плитка игрока */
 .roster-item {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 10px;
+    padding: 18px 12px;
     border-radius: 6px;
-    font-weight: 600;
     text-align: center;
-    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 95px; /* Задаем красивую высоту плитки */
+    transition: all 0.2s ease;
 }
 
-.roster-item span {
-    display: block;
-    font-size: 0.75rem;
-    color: var(--accent-blue);
+.roster-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Стили для контейнера с ФИО игрока */
+.player-full-name {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #9a9da4; /* Имя и фамилия будут аккуратного серого цвета */
+    line-height: 1.4;
+}
+
+.player-full-name {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #9a9da4;
+    line-height: 1.4;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Если имя окажется экстремально длинным, оно аккуратно сократится с троеточием */
+    white-space: nowrap; /* СТРОГО запрещаем перенос имени на новую строку */
+}
+
+/* Стиль конкретно для никнейма — строго белый и жирный */
+.player-full-name .player-nickname {
+    color: #ffffff !important;
+    font-weight: 800;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.15);
+    display: inline;
+}
+
+/* Базовый стиль роли игрока */
+.player-role {
+    display: inline-block;
+    font-size: 0.7rem;
     text-transform: uppercase;
-    margin-top: 3px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.05);
+    margin-top: 10px; /* Делаем аккуратный отступ от имени */
+}
+
+/* Цвета ролей (не зависят от цвета ника) */
+.role-captain {
+    color: #ffd700 !important;
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    background: rgba(255, 215, 0, 0.05);
+}
+
+.role-awp {
+    color: #ff4500 !important;
+    border: 1px solid rgba(255, 69, 0, 0.2);
+    background: rgba(255, 69, 0, 0.05);
+}
+
+.role-rifler, .role-entry {
+    color: #23cf5f !important;
+    border: 1px solid rgba(35, 207, 95, 0.2);
+    background: rgba(35, 207, 95, 0.05);
+}
+
+.role-support {
+    color: #238ecf !important;
+    border: 1px solid rgba(35, 142, 207, 0.2);
+    background: rgba(35, 142, 207, 0.05);
+}
+
+.role-coach {
+    color: #9b35de !important;
+    border: 1px solid rgba(155, 53, 222, 0.2);
+    background: rgba(155, 53, 222, 0.05);
+}
+
+.role-default {
+    color: #9a9da4 !important;
+    border: 1px solid rgba(154, 157, 164, 0.2);
 }
 
 /* Адаптивность для мобильных устройств */
