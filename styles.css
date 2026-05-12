@@ -508,9 +508,39 @@ body {
     background: rgba(155, 53, 222, 0.05);
 }
 
+.role-lurker {
+    background-color: rgba(0, 201, 167, 0.12);
+    color: #00c9a7;
+    border: 1px solid rgba(0, 201, 167, 0.4);
+    box-shadow: 0 0 8px rgba(0, 201, 167, 0.15);
+}
+
 .role-default {
     color: #9a9da4 !important;
     border: 1px solid rgba(154, 157, 164, 0.2);
+}
+
+/* Контейнер для отображения ролей игрока в списке */
+.player-roles-list {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* --- СТИЛИ ДЛЯ ЗАПАСНЫХ ИГРОКОВ --- */
+.substitute-item {
+    background: rgba(255, 255, 255, 0.015); /* Чуть темнее основного состава */
+    border: 1px dashed rgba(154, 157, 164, 0.2); /* Пунктирная рамка подчеркивает статус запаса */
+    opacity: 0.75; /* Легкая прозрачность в обычном состоянии */
+    transition: all 0.25s ease;
+}
+
+.substitute-item:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: var(--accent-orange); /* При наведении подсвечивается оранжевым */
+    opacity: 1; /* Становится ярким */
+    transform: translateY(-2px); /* Легкое всплытие */
 }
 
 /* Адаптивность для мобильных устройств */
