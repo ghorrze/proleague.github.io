@@ -8,9 +8,12 @@ const teamsData = [
             { firstName: "Семён", nickname: "Achtung", lastName: "Макин", role: "IGL" },
             { firstName: "Пётр", nickname: "petak", lastName: "Макин", role: "AWP" },
             { firstName: "Влад", nickname: "KyLu4", lastName: "Полушин", role: "Rifler" },
-            { firstName: "Андрей", nickname: "recise", lastName: "Васильев", role: "Support" },
+            { firstName: "Андрей", nickname: "recise", lastName: "Васильев", role: "Support, Lurker" },
             { firstName: "Фёдор", nickname: "kyushu", lastName: "Пленков", role: "Entry" },
             { firstName: "Матвей", nickname: "monic", lastName: "Верещагин", role: "Coach" }
+        ],
+        substitutes: [
+            { firstName: "Михаил", nickname: "io", lastName: "Градобоев", role: "" }
         ]
     },
     {
@@ -20,7 +23,7 @@ const teamsData = [
         description: "Академический состав легендарной организации Virtus.Pro. Молодые таланты, готовые ворваться на тир-1 сцену CS2.",
         players: [
             { firstName: "Михаил", nickname: "dOOr4jl3y", lastName: "Сорокин", role: "IGL" },
-            { firstName: "Марк", nickname: "Pers1k", lastName: "Ахмеров", role: "AWP" },
+            { firstName: "Марк", nickname: "Pers1k", lastName: "Ахмеров", role: "Lurker, AWP" },
             { firstName: "Артур", nickname: "Вафля", lastName: "Тимошин", role: "Rifler" },
             { firstName: "Александра", nickname: "BANG!", lastName: "Ёркина", role: "Support" },
             { firstName: "Арсений", nickname: "zigeng bogeng", lastName: "Пальгуев", role: "Entry" },
@@ -35,9 +38,9 @@ const teamsData = [
         players: [
             { firstName: "Тимофей", nickname: "Xelsew", lastName: "Леонов", role: "IGL" },
             { firstName: "Антон", nickname: "Oxxxyanton", lastName: "Игонин", role: "AWP" },
-            { firstName: "Глеб", nickname: "Ty", lastName: "Шевченко", role: "Rifler" },
-            { firstName: "Даниил", nickname: "Neo", lastName: "Соболев", role: "Support" },
-            { firstName: "Матвей", nickname: "Trinity", lastName: "Румянцев", role: "Entry" },
+            { firstName: "Андрей", nickname: "VIOP", lastName: "Макарчук", role: "Lurker" },
+            { firstName: "Денис", nickname: "Den4mice", lastName: "Железняк", role: "Support" },
+            { firstName: "Валерий", nickname: "V1ad3", lastName: "Онищенко", role: "Entry" },
             { firstName: "Филипп", nickname: "NEO", lastName: "Кубских", role: "Coach" }
         ]
     },
@@ -47,12 +50,12 @@ const teamsData = [
         logo: "./resources/logos/yolen.jpg",
         description: "Сбалансированный коллектив с упором на сильную дефенс-сторону. Медленный и тягучий стиль игры заставляет соперников ошибаться.",
         players: [
-            { firstName: "Андрей", nickname: "Spil", lastName: "Васильев", role: "IGL" },
-            { firstName: "Ярослав", nickname: "Hardy", lastName: "Зайцев", role: "AWP" },
-            { firstName: "Владислав", nickname: "Focus", lastName: "Павлов", role: "Rifler" },
-            { firstName: "Кирилл", nickname: "Zeal", lastName: "Голубев", role: "Support" },
-            { firstName: "Максим", nickname: "Apex", lastName: "Виноградов", role: "Entry" },
-            { firstName: "Матвей", nickname: "monic", lastName: "Верещагин", role: "Coach" }
+            { firstName: "Имя", nickname: "nick", lastName: "Фамилия", role: "IGL" },
+            { firstName: "Имя", nickname: "nick", lastName: "Фамилия", role: "AWP" },
+            { firstName: "Имя", nickname: "nick", lastName: "Фамилия", role: "Rifler" },
+            { firstName: "Имя", nickname: "nick", lastName: "Фамилия", role: "Support" },
+            { firstName: "Имя", nickname: "nick", lastName: "Фамилия", role: "Entry" },
+            { firstName: "Имя", nickname: "nick", lastName: "Фамилия", role: "Coach" }      
         ]
     },
     {
@@ -61,26 +64,26 @@ const teamsData = [
         logo: "./resources/logos/zubri.jpg",
         description: "Настоящие мастодонты локальной сцены. Невероятный опыт и хладнокровие в самых сложных клатч-ситуациях.",
         players: [
-            { firstName: "Владимир", nickname: "Zubr", lastName: "Богданов", role: "IGL" },
-            { firstName: "Денис", nickname: "Bizon", lastName: "Воробьев", role: "AWP" },
-            { firstName: "Федор", nickname: "Mammoth", lastName: "Федоров", role: "Rifler" },
-            { firstName: "Тимур", nickname: "Taiga", lastName: "Беляев", role: "Support" },
-            { firstName: "Александр", nickname: "Siberia", lastName: "Жуков", role: "Entry" },
-            { firstName: "Матвей", nickname: "monic", lastName: "Верещагин", role: "Coach" }
+            { firstName: "Дмитрий", nickname: "kr1mZe", lastName: "Данков", role: "IGL, AWP" },
+            { firstName: "Иван", nickname: "w0nt", lastName: "Попов", role: "Lurker" },
+            { firstName: "Марк", nickname: "ZennLyy", lastName: "Мозжерин", role: "Support" },
+            { firstName: "Даниил", nickname: "KAKOCIK", lastName: "Казак", role: "Support" },
+            { firstName: "Иван", nickname: "sds", lastName: "Штык", role: "Entry" },
+            { firstName: "Имя", nickname: "nick", lastName: "Фамилия", role: "Coach" }
         ]
     },
     {
         id: 6,
-        name: "OOO Pogremushka",
-        logo: "https://placehold.co/100x100/de35b0/ffffff?text=OOO",
+        name: "VARIPISION",
+        logo: "./resources/logos/varipision.jpg",
         description: "Они создают много шума на карте! Максимально быстрые раунды, постоянные эко-раши и невероятная стрельба на бегу.",
         players: [
-            { firstName: "Роман", nickname: "Shum", lastName: "Захаров", role: "IGL" },
-            { firstName: "Константин", nickname: "Grom", lastName: "Орлов", role: "AWP" },
-            { firstName: "Виктор", nickname: "Bum", lastName: "Соболев", role: "Rifler" },
-            { firstName: "Олег", nickname: "Bang", lastName: "Киселев", role: "Support" },
-            { firstName: "Антон", nickname: "Flash", lastName: "Макаров", role: "Entry" },
-            { firstName: "Матвей", nickname: "monic", lastName: "Верещагин", role: "Coach" }
+            { firstName: "Макар", nickname: "d3aler", lastName: "Горбунов", role: "IGL, AWP" },
+            { firstName: "Никита", nickname: "Анти-Талант", lastName: "Кривошеин", role: "Rifler, Lurker" },
+            { firstName: "Михаил", nickname: "culture", lastName: "Тюлькин", role: "Rifler" },
+            { firstName: "Никита", nickname: "VovaVeronov", lastName: "Мокрушин", role: "Support" },
+            { firstName: "Кирилл", nickname: "1mp5ct", lastName: "Растегаев", role: "Entry" },
+            { firstName: "Бастан", nickname: "bastan", lastName: "Окбаев", role: "Coach" }
         ]
     },
     {
@@ -89,12 +92,12 @@ const teamsData = [
         logo: "./resources/logos/gubashelps.jpg",
         description: "Команда-мем, которая неожиданно для всех начала выигрывать региональные квалификации. Их главная сила — синергия и юмор.",
         players: [
-            { firstName: "Григорий", nickname: "Guba", lastName: "Козлов", role: "IGL" },
-            { firstName: "Степан", nickname: "Shlep", lastName: "Новиков", role: "AWP" },
-            { firstName: "Павел", nickname: "Pupa", lastName: "Морозов", role: "Rifler" },
-            { firstName: "Леонид", nickname: "Lupa", lastName: "Петров", role: "Support" },
-            { firstName: "Никита", nickname: "Buster", lastName: "Соловьев", role: "Entry" },
-            { firstName: "Матвей", nickname: "monic", lastName: "Верещагин", role: "Coach" }
+            { firstName: "Имя", nickname: "nick", lastName: "Фамилия", role: "IGL" },
+            { firstName: "Имя", nickname: "nick", lastName: "Фамилия", role: "AWP" },
+            { firstName: "Имя", nickname: "nick", lastName: "Фамилия", role: "Rifler" },
+            { firstName: "Имя", nickname: "nick", lastName: "Фамилия", role: "Support" },
+            { firstName: "Имя", nickname: "nick", lastName: "Фамилия", role: "Entry" },
+            { firstName: "Имя", nickname: "nick", lastName: "Фамилия", role: "Coach" }
         ]
     },
     {
@@ -103,12 +106,12 @@ const teamsData = [
         logo: "./resources/logos/kotakbas.jpg",
         description: "Опытный центральноазиатский ростер с филигранным пониманием карты Mirage и невероятной стрельбой из снайперских винтовок.",
         players: [
-            { firstName: "Руслан", nickname: "Nomad", lastName: "Алиев", role: "IGL" },
-            { firstName: "Адиль", nickname: "Steppe", lastName: "Сагитов", role: "AWP" },
-            { firstName: "Тимур", nickname: "Khan", lastName: "Ибрагимов", role: "Rifler" },
-            { firstName: "Данияр", nickname: "Alga", lastName: "Ахметов", role: "Support" },
-            { firstName: "Бахтияр", nickname: "Batyra", lastName: "Ермеков", role: "Entry" },
-            { firstName: "Матвей", nickname: "monic", lastName: "Верещагин", role: "Coach" }
+            { firstName: "Имя", nickname: "nick", lastName: "Фамилия", role: "IGL" },
+            { firstName: "Имя", nickname: "nick", lastName: "Фамилия", role: "AWP" },
+            { firstName: "Имя", nickname: "nick", lastName: "Фамилия", role: "Rifler" },
+            { firstName: "Имя", nickname: "nick", lastName: "Фамилия", role: "Support" },
+            { firstName: "Имя", nickname: "nick", lastName: "Фамилия", role: "Entry" },
+            { firstName: "Имя", nickname: "nick", lastName: "Фамилия", role: "Coach" }
         ]
     },
     {
@@ -117,12 +120,16 @@ const teamsData = [
         logo: "./resources/logos/www.jpg",
         description: "Интернет-герои, перешедшие на LAN-формат. Показывают идеальную раскидку гранат и стратегический подход к каждому раунду.",
         players: [
-            { firstName: "Святослав", nickname: "Dot", lastName: "Романов", role: "IGL" },
-            { firstName: "Арсений", nickname: "Com", lastName: "Власов", role: "AWP" },
-            { firstName: "Григорий", nickname: "Net", lastName: "Григорьев", role: "Rifler" },
-            { firstName: "Евгений", nickname: "Web", lastName: "Гусев", role: "Support" },
-            { firstName: "Владислав", nickname: "Link", lastName: "Давыдов", role: "Entry" },
-            { firstName: "Матвей", nickname: "monic", lastName: "Верещагин", role: "Coach" }
+            { firstName: "Александр", nickname: "spa4k", lastName: "Головин", role: "IGL" },
+            { firstName: "Серхио", nickname: "velarbebe", lastName: "Рамос", role: "AWP" },
+            { firstName: "Денис", nickname: "spesher", lastName: "Жуков", role: "Rifler" },
+            { firstName: "Григорий", nickname: "Mart1n", lastName: "Степанов", role: "Support" },
+            { firstName: "Дмитрий", nickname: "A4eTak", lastName: "Холлс", role: "Entry" },
+            { firstName: "Сергей", nickname: "hally", lastName: "Шаваев", role: "Coach" }
+        ],
+        substitutes: [
+            { firstName: "Семён", nickname: "упитанный", lastName: "Чарегородцев", role: "Rifler" },
+            { firstName: "Григорий", nickname: "krokodil", lastName: "Иванов", role: "Rifler" }
         ]
     }
 ];

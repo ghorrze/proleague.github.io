@@ -9,6 +9,8 @@ const modalLogo = document.getElementById('modalLogo');
 const modalTeamName = document.getElementById('modalTeamName');
 const modalDescription = document.getElementById('modalDescription');
 const modalRoster = document.getElementById('modalRoster');
+const substitutesContainer = document.getElementById('substitutesContainer');
+const modalSubstitutes = document.getElementById('modalSubstitutes');
 
 // Отрисовка карточек на главной странице
 function renderTeams() {
@@ -34,7 +36,54 @@ function renderTeams() {
     });
 }
 
-// Открытие модального окна команды и определение цветовой гаммы для ролей
+// Функция подбора CSS-класса для конкретной роли
+function getRoleClass(role) {
+    if (!role) return 'role-default';
+    
+    const roleLower = role.toLowerCase().trim();
+
+    if (roleLower.includes('igl') || roleLower.includes('captain')) {
+        return 'role-captain';
+    } else if (roleLower.includes('awp')) {
+        return 'role-awp';
+    } else if (roleLower.includes('entry')) {
+        return 'role-entry';
+    } else if (roleLower.includes('rifler')) {
+        return 'role-rifler';
+    } else if (roleLower.includes('lurker') || roleLower.includes('люркер')) {
+        return 'role-lurker';
+    } else if (roleLower.includes('support')) {
+        return 'role-support';
+    } else if (roleLower.includes('coach')) {
+        return 'role-coach';
+    }
+    
+    return 'role-default';
+}
+
+// Функция для генерации HTML-кода ролей (поддерживает одну или несколько ролей сразу)
+function renderPlayerRoles(roleData) {
+    if (!roleData) return '';
+
+    let rolesArray = [];
+
+    // Если роли переданы массивом
+    if (Array.isArray(roleData)) {
+        rolesArray = roleData;
+    } 
+    // Если роли переданы строкой (например, "Lurker, Rifler")
+    else if (typeof roleData === 'string') {
+        rolesArray = roleData.split(/[,/]+/).map(r => r.trim());
+    }
+
+    // Генерируем массив бэджей и объединяем их пробелом
+    return rolesArray.map(role => {
+        const roleClass = getRoleClass(role);
+        return `<span class="player-role ${roleClass}">${role}</span>`;
+    }).join(' ');
+}
+
+// Открытие модального окна команды
 function openTeamDetails(id) {
     const team = teamsData.find(t => t.id === id);
     if (!team) return;
@@ -44,40 +93,41 @@ function openTeamDetails(id) {
     modalTeamName.textContent = team.name;
     modalDescription.textContent = team.description;
 
+    // 1. Рендерим основной состав
     modalRoster.innerHTML = '';
     team.players.forEach(player => {
-        const li = document.createElement('li');
-        li.className = 'roster-item';
-        
-        const formattedName = `${player.firstName} <span class="player-nickname">"${player.nickname}"</span> ${player.lastName}`;
-        
-        // Алгоритм распознавания ролей по ключевым словам
-        let roleClass = 'role-default';
-        const roleLower = player.role.toLowerCase();
-
-        if (roleLower.includes('igl')) {
-            roleClass = 'role-captain';
-        } else if (roleLower.includes('awp')) {
-            roleClass = 'role-awp';
-        } else if (roleLower.includes('rifler')) {
-            roleClass = 'role-rifler';
-        } else if (roleLower.includes('entry')) {
-            roleClass = 'role-entry';
-        } else if (roleLower.includes('support')) {
-            roleClass = 'role-support';
-        } else if (roleLower.includes('coach')) {
-            roleClass = 'role-coach';
-        }
-        
-        li.innerHTML = `
-            <div class="player-full-name">${formattedName}</div>
-            <span class="player-role ${roleClass}">${player.role}</span>
-        `;
-        modalRoster.appendChild(li);
+        modalRoster.appendChild(createPlayerCard(player));
     });
+
+    // 2. Рендерим игроков запаса (если они есть в data.js)
+    modalSubstitutes.innerHTML = '';
+    if (team.substitutes && team.substitutes.length > 0) {
+        team.substitutes.forEach(player => {
+            modalSubstitutes.appendChild(createPlayerCard(player, true));
+        });
+        substitutesContainer.style.display = 'block'; // Показываем блок запаса
+    } else {
+        substitutesContainer.style.display = 'none';  // Скрываем блок, если запаса нет
+    }
 
     modalOverlay.classList.add('active');
     document.body.style.overflow = 'hidden';
+}
+
+function createPlayerCard(player, isSubstitute = false) {
+    const li = document.createElement('li');
+    // Если игрок из запаса, добавим ему дополнительный класс для стилизации
+    li.className = `roster-item ${isSubstitute ? 'substitute-item' : ''}`;
+    
+    const formattedName = `${player.firstName} <span class="player-nickname">"${player.nickname}"</span> ${player.lastName}`;
+    
+    li.innerHTML = `
+        <div class="player-full-name">${formattedName}</div>
+        <div class="player-roles-list">
+            ${renderPlayerRoles(player.role)}
+        </div>
+    `;
+    return li;
 }
 
 // Закрытие модального окна
@@ -146,7 +196,6 @@ document.addEventListener('DOMContentLoaded', () => {
 // =========================================================================
 document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape' || e.key === 'Esc') {
-        // Если у вас в коде уже объявлена функция закрытия, просто вызываем её:
         if (typeof closeModal === 'function') {
             closeModal();
         }

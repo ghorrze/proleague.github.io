@@ -1,4 +1,6 @@
-
+// =========================================================================
+// ЛОГИКА ПЛАВНОГО ПОЭКРАННОГО СКРОЛЛА
+// =========================================================================
 const sections = [
     document.querySelector('.hero'),
     document.getElementById('teams-section')
@@ -24,35 +26,36 @@ function scrollToSection(index) {
         behavior: 'smooth'
     });
 
+    // Даем время на завершение анимации скролла
     setTimeout(() => {
         isScrollTransitioning = false;
-    }, 100); 
+    }, 800); // Увеличил таймаут для более плавной работы колесика
 }
 
-// Делаем функцию доступной для других файлов (например, для main.js)
+// Делаем функцию глобальной, чтобы ее видела кнопка в main.js
 window.scrollToSection = scrollToSection;
 
-// 1. Обработка колесика мыши и тачпадов ноутбуков
+// Перехват скролла колесиком мыши
 window.addEventListener('wheel', function(e) {
-    // Полностью запрещаем стандартную прокрутку браузера
+    // ВАЖНЫЙ ФИКС: Если открыто модальное окно, не блокируем скролл!
+    const modal = document.getElementById('modalOverlay');
+    if (modal && modal.classList.contains('active')) return;
+
+    if (isScrollTransitioning) {
+        e.preventDefault();
+        return;
+    }
+
     e.preventDefault();
 
-    if (isScrollTransitioning) return;
-
     if (e.deltaY > 0) {
-        // Колесико вниз -> к командам (секция 1)
-        if (currentSectionIndex < sections.length - 1) {
-            scrollToSection(currentSectionIndex + 1);
-        }
+        if (currentSectionIndex < sections.length - 1) scrollToSection(currentSectionIndex + 1);
     } else if (e.deltaY < 0) {
-        // Колесико вверх -> к заставке (секция 0)
-        if (currentSectionIndex > 0) {
-            scrollToSection(currentSectionIndex - 1);
-        }
+        if (currentSectionIndex > 0) scrollToSection(currentSectionIndex - 1);
     }
-}, { passive: false }); // passive: false обязателен для работы e.preventDefault()
+}, { passive: false }); 
 
-// 2. Обработка свайпов на смартфонах и планшетах
+// Перехват свайпов на телефонах
 let touchStartPos = 0;
 
 window.addEventListener('touchstart', function(e) {
@@ -60,6 +63,10 @@ window.addEventListener('touchstart', function(e) {
 }, { passive: true });
 
 window.addEventListener('touchmove', function(e) {
+    // ВАЖНЫЙ ФИКС: Если открыто модальное окно, разрешаем свайпать внутри него!
+    const modal = document.getElementById('modalOverlay');
+    if (modal && modal.classList.contains('active')) return;
+
     if (isScrollTransitioning) {
         e.preventDefault();
         return;
@@ -68,25 +75,17 @@ window.addEventListener('touchmove', function(e) {
     const touchEndPos = e.touches[0].clientY;
     const swipeDistance = touchStartPos - touchEndPos;
 
-    // Если свайп достаточно длинный (более 50px), чтобы избежать случайных нажатий
     if (Math.abs(swipeDistance) > 50) {
-        e.preventDefault(); // Запрещаем стандартный мобильный скролл
-
+        e.preventDefault(); 
         if (swipeDistance > 0) {
-            // Свайп вверх -> листаем вниз к командам
-            if (currentSectionIndex < sections.length - 1) {
-                scrollToSection(currentSectionIndex + 1);
-            }
+            if (currentSectionIndex < sections.length - 1) scrollToSection(currentSectionIndex + 1);
         } else {
-            // Свайп вниз -> листаем вверх к заставке
-            if (currentSectionIndex > 0) {
-                scrollToSection(currentSectionIndex - 1);
-            }
+            if (currentSectionIndex > 0) scrollToSection(currentSectionIndex - 1);
         }
     }
 }, { passive: false });
 
-// 3. Корректировка при изменении размера экрана (чтобы секция не «съезжала»)
+// Авто-корректировка при изменении размера окна (повороте телефона)
 window.addEventListener('resize', () => {
     const targetSection = sections[currentSectionIndex];
     if (targetSection) {
