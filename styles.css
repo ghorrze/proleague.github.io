@@ -485,15 +485,15 @@ body {
 }
 
 .role-rifler {
-    color: #23cf5f !important;
-    border: 1px solid rgba(35, 207, 95, 0.2);
-    background: rgba(35, 207, 95, 0.05);
+    color: #cd7f32 !important;
+    border: 1px solid rgba(205, 127, 50, 0.2);
+    background: rgba(205, 127, 50, 0.05);
 }
 
 .role-entry {
-    color: #cd7f32 !important;
-    border: 1px solid rgba(205, 127, 50, 0.4);
-    box-shadow: 0 0 8px rgba(205, 127, 50, 0.15);
+    color: #23cf5f !important;
+    border: 1px solid rgba(35, 207, 95, 0.2);
+    background: rgba(35, 207, 95, 0.05);
 }
 
 .role-support {
@@ -509,10 +509,10 @@ body {
 }
 
 .role-lurker {
-    background-color: rgba(0, 201, 167, 0.12);
+    background-color: rgba(0, 201, 167, 0.05);
     color: #00c9a7;
-    border: 1px solid rgba(0, 201, 167, 0.4);
-    box-shadow: 0 0 8px rgba(0, 201, 167, 0.15);
+    border: 1px solid rgba(0, 201, 167, 0.2);
+    /* box-shadow: 0 0 8px rgba(0, 201, 167, 0.15); */
 }
 
 .role-default {
