@@ -13,7 +13,7 @@ const teamsData = [
             { firstName: "Матвей", nickname: "monic", lastName: "Верещагин", role: "Coach" }
         ],
         substitutes: [
-            { firstName: "Михаил", nickname: "io", lastName: "Градобоев", role: "" }
+            { firstName: "Михаил", nickname: "io", lastName: "Градобоев", role: "Support" }
         ]
     },
     {
@@ -38,8 +38,8 @@ const teamsData = [
         players: [
             { firstName: "Тимофей", nickname: "Xelsew", lastName: "Леонов", role: "IGL" },
             { firstName: "Антон", nickname: "Oxxxyanton", lastName: "Игонин", role: "AWP" },
-            { firstName: "Андрей", nickname: "VIOP", lastName: "Макарчук", role: "Lurker" },
-            { firstName: "Денис", nickname: "Den4mice", lastName: "Железняк", role: "Support" },
+            { firstName: "Андрей", nickname: "VIOP", lastName: "Макарчук", role: "Rifler" },
+            { firstName: "Денис", nickname: "Den4mice", lastName: "Железняк", role: "Support, Lurker" },
             { firstName: "Валерий", nickname: "V1ad3", lastName: "Онищенко", role: "Entry" },
             { firstName: "Филипп", nickname: "NEO", lastName: "Кубских", role: "Coach" }
         ]
@@ -50,12 +50,12 @@ const teamsData = [
         logo: "./resources/logos/yolen.jpg",
         description: "Сбалансированный коллектив с упором на сильную дефенс-сторону. Медленный и тягучий стиль игры заставляет соперников ошибаться.",
         players: [
-            { firstName: "Имя", nickname: "nick", lastName: "Фамилия", role: "IGL" },
-            { firstName: "Имя", nickname: "nick", lastName: "Фамилия", role: "AWP" },
-            { firstName: "Имя", nickname: "nick", lastName: "Фамилия", role: "Rifler" },
-            { firstName: "Имя", nickname: "nick", lastName: "Фамилия", role: "Support" },
-            { firstName: "Имя", nickname: "nick", lastName: "Фамилия", role: "Entry" },
-            { firstName: "Имя", nickname: "nick", lastName: "Фамилия", role: "Coach" }      
+            { firstName: "Фёдор", nickname: "Arceee", lastName: "Басос", role: "IGL" },
+            { firstName: "Марк", nickname: "Mellor", lastName: "Луцышин", role: "AWP" },
+            { firstName: "Глеб", nickname: "nindga", lastName: "Чижик", role: "Rifler" },
+            { firstName: "Даниил", nickname: "Diff1k", lastName: "Перешков", role: "Support" },
+            { firstName: "Роман", nickname: "kw1t0", lastName: "Королёв", role: "Entry" },
+            { firstName: "-", nickname: "nick", lastName: "-", role: "Coach" }
         ]
     },
     {
@@ -69,10 +69,10 @@ const teamsData = [
             { firstName: "Марк", nickname: "ZennLyy", lastName: "Мозжерин", role: "Support" },
             { firstName: "Даниил", nickname: "KAKOCIK", lastName: "Казак", role: "Support" },
             { firstName: "Иван", nickname: "sds", lastName: "Штык", role: "Entry" },
-            { firstName: "Имя", nickname: "nick", lastName: "Фамилия", role: "Coach" }
+            { firstName: "?????", nickname: "nick", lastName: "?????", role: "Coach" }
         ]
     },
-    {
+    {   
         id: 6,
         name: "VARIPISION",
         logo: "./resources/logos/varipision.jpg",
@@ -92,12 +92,16 @@ const teamsData = [
         logo: "./resources/logos/gubashelps.jpg",
         description: "Команда-мем, которая неожиданно для всех начала выигрывать региональные квалификации. Их главная сила — синергия и юмор.",
         players: [
-            { firstName: "Имя", nickname: "nick", lastName: "Фамилия", role: "IGL" },
-            { firstName: "Имя", nickname: "nick", lastName: "Фамилия", role: "AWP" },
-            { firstName: "Имя", nickname: "nick", lastName: "Фамилия", role: "Rifler" },
-            { firstName: "Имя", nickname: "nick", lastName: "Фамилия", role: "Support" },
-            { firstName: "Имя", nickname: "nick", lastName: "Фамилия", role: "Entry" },
-            { firstName: "Имя", nickname: "nick", lastName: "Фамилия", role: "Coach" }
+            { firstName: "Константин", nickname: "хомек", lastName: "Нестюркин", role: "IGL" },
+            { firstName: "Тимур", nickname: "Akiracvr", lastName: "Нигматуллин", role: "AWP" },
+            { firstName: "Оскар", nickname: "afrodisiak", lastName: "Нигатуллин", role: "Rifler" },
+            { firstName: "Азамат", nickname: "Azamat228__", lastName: "Тагиров", role: "Support" },
+            { firstName: "Роман", nickname: "Bxnnxd", lastName: "Кильдияров", role: "Entry" },
+            { firstName: "Ge", nickname: "G0ogl3", lastName: "Mini", role: "Coach" }
+        ],
+        substitutes: [
+            { firstName: "Данис", nickname: "W1z4rd", lastName: "Алибаев", role: "Rifler" },
+            { firstName: "Валерий", nickname: "otherwise", lastName: "Ниггертуллин", role: "Support" }
         ]
     },
     {
@@ -106,12 +110,12 @@ const teamsData = [
         logo: "./resources/logos/kotakbas.jpg",
         description: "Опытный центральноазиатский ростер с филигранным пониманием карты Mirage и невероятной стрельбой из снайперских винтовок.",
         players: [
-            { firstName: "Имя", nickname: "nick", lastName: "Фамилия", role: "IGL" },
-            { firstName: "Имя", nickname: "nick", lastName: "Фамилия", role: "AWP" },
-            { firstName: "Имя", nickname: "nick", lastName: "Фамилия", role: "Rifler" },
-            { firstName: "Имя", nickname: "nick", lastName: "Фамилия", role: "Support" },
-            { firstName: "Имя", nickname: "nick", lastName: "Фамилия", role: "Entry" },
-            { firstName: "Имя", nickname: "nick", lastName: "Фамилия", role: "Coach" }
+            { firstName: "-", nickname: "nick", lastName: "-", role: "IGL" },
+            { firstName: "-", nickname: "nick", lastName: "-", role: "AWP" },
+            { firstName: "-", nickname: "nick", lastName: "-", role: "Rifler" },
+            { firstName: "-", nickname: "nick", lastName: "-", role: "Support" },
+            { firstName: "-", nickname: "nick", lastName: "-", role: "Entry" },
+            { firstName: "-", nickname: "nick", lastName: "-", role: "Coach" }
         ]
     },
     {
